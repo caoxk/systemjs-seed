@@ -21,7 +21,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    singleRun: false,
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
@@ -43,7 +43,8 @@ module.exports = function(config) {
     proxies: {
       '/base/app': '/base/dist/app',
       '/base/common': '/base/dist/common',
-      '/jspm_packages': '/base/jspm_packages'
+      '/jspm_packages': '/base/jspm_packages',
+	  '/test-unit/':'/base/test-unit/'
     },
 
     // list of files to exclude
