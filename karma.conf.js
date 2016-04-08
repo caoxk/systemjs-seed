@@ -21,7 +21,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
@@ -37,12 +37,15 @@ module.exports = function(config) {
 	  ],
       serveFiles: [
         'dist/**/**'
-	  ]
+	  ],
+	  meta: {
+		'test-unit/*': { format: 'register' }
+	  }
     },
 
     proxies: {
-      '/base/app': '/base/dist/app',
-      '/base/common': '/base/dist/common',
+      '/app/': '/base/dist/app/',
+      '/common/': '/base/dist/common/',
       '/jspm_packages': '/base/jspm_packages',
 	  '/test-unit/':'/base/test-unit/'
     },
